@@ -15,6 +15,6 @@ sh linkall.sh
 
 ## References
 
-Thsi dotfiles are highly inspired (not copied i swear) mainly from:
+This dotfiles are highly inspired (not copied i swear) mainly from:
 
 - <https://github.com/Huxpro/dotfiles>
