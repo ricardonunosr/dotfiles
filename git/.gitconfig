@@ -1,0 +1,14 @@
+# This is Git's per-user configuration file.
+[user]
+	email = ricardonunosr@gmail.com
+	name = Ricardo Ribeiro
+[core]
+  editor = code --wait
+[diff]
+  tool = vscode
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+  tool = vscode
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
