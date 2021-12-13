@@ -1,33 +1,23 @@
-filetype on
-filetype indent on
-filetype plugin on
-
+" General
+syntax on
+set ma
+set mouse=a
+"set cursorline
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set autoread
+set nobackup
+set nowritebackup
+set noswapfile
+set nu 
+set foldlevelstart=99
+set scrolloff=7
+set clipboard=unnamedplus
 set encoding=UTF-8
 
-syntax on
-set nocompatible
-set hlsearch
-set number relativenumber
-set laststatus=2
-set vb
-set spelllang=en_us
-set autoindent
-set mouse=a
-set clipboard=unnamed
-set noscrollbind
-set wildmenu
-set autochdir
-
-hi Search cterm=NONE ctermfg=black ctermbg=red
-
-" No more Arrow Keys, deal with it
-" noremap <Up> <NOP>
-" noremap <Down> <NOP>
-" noremap <Left> <NOP>
-" noremap <Right> <NOP>
-
 " netrw
-
 nnoremap - :Explore<CR>
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
@@ -41,7 +31,6 @@ Plug 'ctrlpvim/ctrlp.vim'      " https://github.com/ctrlpvim/ctrlp.vim
 Plug 'ryanoasis/vim-devicons'  " https://github.com/ryanoasis/vim-devicons + https://github.com/ryanoasis/nerd-fonts/
 Plug 'tpope/vim-commentary'    " https://github.com/tpope/vim-commentary
 Plug 'airblade/vim-gitgutter'  " https://github.com/airblade/vim-gitgutter
-Plug 'mkitt/tabline.vim'       " https://github.com/mkitt/tabline.vim
 
 "> Go
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' } " https://github.com/fatih/vim-go
