@@ -123,6 +123,9 @@ jdk() {
 
 export JAVA_HOME=`/usr/libexec/java_home -v 15`;
 
+#Rust
+export CARGOPATH="$HOME/.cargo"
+export PATH=$PATH:$CARGOPATH/bin
 
 export GREENLIGHT_DB_DSN='postgres://greenlight:pa55word@localhost/greenlight?sslmode=disable'
 

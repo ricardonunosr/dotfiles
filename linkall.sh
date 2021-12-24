@@ -9,4 +9,5 @@ ln -sf "$cwd/zsh/.zshrc" ~/.zshrc
 ln -sf "$cwd/git/.gitconfig" ~/.gitconfig
 
 #nvim
-ln -sf "$cwd/nvim/init.vim" ~/.config/nvim/init.vim
+ln -sf "$cwd/nvim/init.lua" ~/.config/nvim/init.lua
+ln -sf "$cwd/nvim/lua" ~/.config/nvim/lua
