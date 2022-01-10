@@ -48,6 +48,7 @@ return packer.startup(function(use)
   -- Colorscheme
   use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
   use "vim-airline/vim-airline"
+  use "vim-airline/vim-airline-themes"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
