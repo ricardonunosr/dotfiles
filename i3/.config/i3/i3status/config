@@ -38,11 +38,11 @@ volume master {
 }
 
 battery all {
-        format = "⚡%status %percentage %remaining"
+        format = "%status %percentage %remaining"
 }
 
 tztime local {
-        format = "%d-%m-%Y 🕒%H:%M"
+        format = "%d-%m-%Y %H:%M"
 }
 
 load {
@@ -50,5 +50,5 @@ load {
 }
 
 disk "/" {
-        format = "💾%avail"
+        format = "%avail"
 }
