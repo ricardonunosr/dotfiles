@@ -13,7 +13,7 @@ general {
 
 order += "disk /"
 order += "wireless _first_"
-order += "ethernet enx482ae39c466a"
+order += "ethernet enp4s0"
 order += "battery all"
 order += "volume master"
 order += "load"
