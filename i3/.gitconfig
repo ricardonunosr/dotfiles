@@ -15,3 +15,7 @@
 	uncommit = reset --soft HEAD~1
 [core]
 	editor = "vim"
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
