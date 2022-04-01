@@ -163,7 +163,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # check class by using xprop command
 assign [class="Google-chrome"] $ws1
 for_window [class="Spotify"] move to workspace $ws9
-assign [class="discord"] $ws8
+assign [class="Microsoft Teams - Preview"] $ws8
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
