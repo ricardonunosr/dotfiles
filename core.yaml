@@ -17,3 +17,10 @@
       apt: name=stow
     - name: Stow dotfiles
       shell: cd $HOME/dotfiles && stow i3
+    - name: Install snaps
+      become: true
+      snap:
+        name: ["discord","spotify","keepassxc","code"]
+        classic: yes
+    - name: Make dev directory
+      shell: mkdir ~/dev
