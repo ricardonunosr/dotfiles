@@ -20,7 +20,7 @@ vim.opt.writebackup = false                     -- if a file is being edited by 
 vim.opt.shiftwidth = 4                          -- the number of spaces inserted for each indentation
 vim.opt.tabstop = 4                             -- insert 4 spaces for a tab
 vim.opt.number = true                           -- set numbered lines
-vim.opt.relativenumber = false                  -- set relative numbered lines
+vim.opt.relativenumber = true                   -- set relative numbered lines
 vim.opt.numberwidth = 4                         -- set number column width to 2 {default 4}
 vim.opt.wrap = false                            -- display lines as one long line
 vim.opt.scrolloff = 8                           -- is one of my fav
@@ -28,22 +28,13 @@ vim.opt.sidescrolloff = 8
 vim.opt.cursorline = true                       -- highlight the current line
 vim.opt.showbreak = "↳"
 vim.opt.shortmess:append "c"
+vim.opt.ruler = true
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 
-if("gui_running")
-then
-	vim.opt.guifont = "Liberation Mono:12"
-end
-
--- Airline
-vim.g.airline_theme = 'dark'
-vim.cmd "let g:airline#extensions#whitespace#mixed_indent_algo = 2"
-vim.cmd "let g:airline#extensions#whitespace#checks = [ 'indent', 'trailing', 'long']"
-
 -- Colorscheme
-local colorscheme = "thetheme"
+local colorscheme = "sitruuna"
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
   vim.notify("colorscheme " .. colorscheme .. " not found!")

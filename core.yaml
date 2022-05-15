@@ -7,7 +7,7 @@
     - name: Installing System Packages 2
       become: true
       apt:
-        name: ["i3","curl","git","vim","rofi","htop","neofetch","pavucontrol","nvidia-settings","flameshot","kitty","keepassxc","qemu","virt-manager","fzf"]
+        name: ["i3","curl","git","vim","rofi","htop","neofetch","pavucontrol","nvidia-settings","flameshot","kitty","keepassxc","qemu","virt-manager","fzf","ripgrep","fd"]
     - name: Installing System Packages 3
       become: true
       apt:
@@ -16,7 +16,7 @@
       become: true
       apt: name=stow
     - name: Stow dotfiles
-      shell: cd $HOME/dotfiles && stow i3
+      shell: cd $HOME/dotfiles && stow home
     - name: Install snaps
       become: true
       snap:

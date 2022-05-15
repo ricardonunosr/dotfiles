@@ -46,35 +46,24 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
 
   -- Colorscheme
-  use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
-  use "vim-airline/vim-airline"
-  use "vim-airline/vim-airline-themes"
+  use "eemed/sitruuna.vim"
   use "tpope/vim-surround"
   use "terrortylor/nvim-comment"
   require('nvim_comment').setup()
-
-  -- cmp plugins
-  --use "hrsh7th/nvim-cmp" -- The completion plugin
-  --use "hrsh7th/cmp-buffer" -- buffer completions
-  --use "hrsh7th/cmp-path" -- path completions
-  --use "hrsh7th/cmp-cmdline" -- cmdline completions
-  --use "saadparwaiz1/cmp_luasnip" -- snippet completions
-  --use "hrsh7th/cmp-nvim-lsp"
-  --use "hrsh7th/cmp-nvim-lua"
-
-  -- snippets
-  --use "L3MON4D3/LuaSnip" --snippet engine
-  --use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+  use {
+	  "nvim-telescope/telescope.nvim",
+	  requires = { { "nvim-lua/plenary.nvim" } }
+  }
 
   -- LSP
-  --use "neovim/nvim-lspconfig" -- enable LSP
-  --use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  use "neovim/nvim-lspconfig" -- enable LSP
+  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
 
   -- Treesitter
-  --use {
-  --  "nvim-treesitter/nvim-treesitter",
-  --  run = ":TSUpdate",
-  --}
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
