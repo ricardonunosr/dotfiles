@@ -100,6 +100,15 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ll="ls -lah"
+alias ga="git add"
+alias gc="git commit"
+alias gco="git checkout"
+alias gcp="git cherry-pick"
+alias gdiff="git diff"
+alias gl="git prettylog"
+alias gp="git push"
+alias gs="git status"
+alias gt="git tag"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
