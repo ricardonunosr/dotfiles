@@ -110,6 +110,9 @@ alias gp="git push"
 alias gs="git status"
 alias gt="git tag"
 
+export PATH=$PATH:/usr/local/go/bin
+export PATH="$PATH:$HOME/go/bin"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -123,3 +126,8 @@ fi
 
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export PATH="/Users/ricardo/dev/Odin:$PATH"
+
+# pnpm
+export PNPM_HOME="/home/ricardo/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
