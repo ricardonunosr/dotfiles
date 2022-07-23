@@ -121,3 +121,5 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	source /usr/share/doc/fzf/examples/completion.zsh
 fi
 
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export PATH="/Users/ricardo/dev/Odin:$PATH"
