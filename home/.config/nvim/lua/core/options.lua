@@ -29,13 +29,12 @@ vim.opt.sidescrolloff = 8
 vim.opt.cursorline = true -- highlight the current line
 vim.opt.showbreak = "↳"
 vim.opt.shortmess:append "c"
-vim.opt.colorcolumn = "80"
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 
 -- Colorscheme
-local colorscheme = "tokyonight"
+local colorscheme = "naysayer88"
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
 	vim.notify("colorscheme " .. colorscheme .. " not found!")
