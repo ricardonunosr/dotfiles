@@ -34,7 +34,7 @@ vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 
 -- Colorscheme
-local colorscheme = "naysayer88"
+local colorscheme = "gruvbox"
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
 	vim.notify("colorscheme " .. colorscheme .. " not found!")

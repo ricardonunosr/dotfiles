@@ -64,15 +64,16 @@ return packer.startup(function(use)
 
 	-- Colorscheme
 	use "folke/tokyonight.nvim"
+	use "morhetz/gruvbox"
 	use "tpope/vim-surround"
 	use "terrortylor/nvim-comment"
 	require('nvim_comment').setup()
 
 	-- Treesitter
-	use {
-		"nvim-treesitter/nvim-treesitter",
-		run = ":TSUpdate",
-	}
+--	use {
+--		"nvim-treesitter/nvim-treesitter",
+--		run = ":TSUpdate",
+--	}
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
