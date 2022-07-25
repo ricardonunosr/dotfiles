@@ -131,3 +131,4 @@ export PATH="/Users/ricardo/dev/Odin:$PATH"
 export PNPM_HOME="/home/ricardo/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+eval "$(direnv hook zsh)"
