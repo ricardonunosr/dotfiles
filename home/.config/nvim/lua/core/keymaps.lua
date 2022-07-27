@@ -51,4 +51,5 @@ keymap("v", "p", '"_dP', opts)
 keymap("x", "J", ":m '>+1<CR>gv=gv", opts)
 keymap("x", "K", ":m '<-2<CR>gv=gv", opts)
 
-keymap("n", "<leader>o", ":Telescope find_files<CR>", opts)
+keymap('n', '<leader>o', '<CMD>lua require("telescope.builtin").find_files{ hidden = true }<CR>', opts)
+keymap('n', '<leader>ol', '<CMD>lua require("telescope.builtin").live_grep()<CR>', opts)
