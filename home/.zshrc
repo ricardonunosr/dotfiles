@@ -123,3 +123,4 @@ fi
 
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export PATH="/Users/ricardo/dev/Odin:$PATH"
+export PATH="/Users/ricardo/go/bin:$PATH"
