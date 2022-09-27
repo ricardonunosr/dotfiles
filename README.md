@@ -1,3 +1,3 @@
 # Ricardo's dotfiles
 
-I mantain this for my personal use, but you're welcome to borrow any part of it ;)
+I maintain this for my personal use, but you're welcome to borrow any part of it ;)

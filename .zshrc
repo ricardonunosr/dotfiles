@@ -120,7 +120,3 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	source /usr/share/doc/fzf/examples/key-bindings.zsh
 	source /usr/share/doc/fzf/examples/completion.zsh
 fi
-
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-export PATH="/Users/ricardo/dev/Odin:$PATH"
-export PATH="/Users/ricardo/go/bin:$PATH"
