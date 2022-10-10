@@ -45,6 +45,6 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.exe              " Windows
 set wildignore+=*/lib/*,*/build/*
 
-set makeprg=cmake\ --build\ ./build/debug/
+set makeprg=cmake\ --build\ ./build/
 nnoremap <F5> :Make<cr> :copen<cr>:wincmd L<cr>
 nnoremap <leader>e :Ex<cr>
