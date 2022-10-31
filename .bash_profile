@@ -1,11 +1,7 @@
-case "$TERM" in
-    xterm-color) color_prompt=yes;;
-esac
-force_color_prompt=yes
-
+export BASH_SILENCE_DEPRECATION_WARNING=1
 export EDITOR='vim'
 export PS1='\u@\h:\[\e[01;32m\]\w\[\e[0m\]\$ '
-
+export CLICOLOR=1
 
 alias ls='ls --color'
 alias ll="ls -lah"
@@ -34,7 +30,6 @@ fi
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$HOME/go/bin"
 
-export PNPM_HOME="/home/ricardo/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+. ~/.pyenvrc
 
-. "$HOME/.cargo/env"
+. ~/.pyenvrc
