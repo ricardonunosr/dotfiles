@@ -25,3 +25,11 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	source /usr/share/doc/fzf/examples/key-bindings.bash
 	source /usr/share/doc/fzf/examples/completion.bash
 fi
+
+export PATH="$PATH:/usr/local/go/bin"
+export PATH="$PATH:$HOME/go/bin"
+
+export PNPM_HOME="/home/ricardo/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+
+. "$HOME/.cargo/env"
