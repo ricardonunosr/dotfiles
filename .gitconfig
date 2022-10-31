@@ -1,6 +1,9 @@
 [user]
-	email = ricardonunosr@gmail.com
-	name = ricardonunosr
+  #email = Ricardo.Ribeiro@ctw.bmwgroup.com
+  #name = ricardoribeiro
+  
+  email = ricardonunosr@gmail.com
+  name = ricardonunosr
 [color]
 	# Enable colors in color-supporting terminals
 	ui = auto

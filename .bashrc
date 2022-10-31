@@ -1,3 +1,8 @@
+case "$TERM" in
+    xterm-color) color_prompt=yes;;
+esac
+force_color_prompt=yes
+
 export EDITOR='vim'
 export PS1='\u@\h:\[\e[01;32m\]\w\[\e[0m\]\$ '
 
