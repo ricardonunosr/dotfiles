@@ -1,7 +1,8 @@
 #!/bin/bash
 
 ln -s $PWD/.tmux.conf ~
-ln -s $PWD/.bash_profile ~
+ln -s $PWD/.bashrc ~
+ln -s $PWD/.bash_aliases ~
 ln -s $PWD/.vimrc ~
 ln -s $PWD/thetheme.vim ~/.vim/colors/thetheme.vim
 ln -s $PWD/config $HOME/.config/i3/config
