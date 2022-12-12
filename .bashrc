@@ -31,9 +31,9 @@ EDITOR=vim
 
 # add ~/bin to PATH
 export PATH="~/bin:$PATH"
+export PATH="~/.local/bin:$PATH"
 
-# source bash aliases
-. ~/.bash_aliases
+# source bash aliases . ~/.bash_aliases
 
 # source computer-specific ~/.bash_profile
 if [ -f ~/.bash_profile ]; then
@@ -58,3 +58,5 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	source /usr/share/doc/fzf/examples/key-bindings.bash
 	source /usr/share/doc/fzf/examples/completion.bash
 fi
+
+[ -s "/home/ricardo/.jabba/jabba.sh" ] && source "/home/ricardo/.jabba/jabba.sh"
