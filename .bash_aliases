@@ -10,6 +10,7 @@ alias gs="git status"
 alias gt="git tag"
 alias gf='git fetch'
 alias gm='git merge'
+alias gap='git add -p'
 
 # colors
 alias ls='ls --color=auto'
