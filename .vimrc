@@ -52,7 +52,7 @@ set expandtab tabstop=2 softtabstop=2 shiftwidth=2
 set linespace=0
 
 let mapleader = "\<space>"
-colorscheme thetheme 
+colorscheme thetheme
 
 " highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -74,15 +74,14 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-dispatch'
-Plug 'kien/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'tek256/simple-dark'
 call plug#end()
 
 " auto resize splits
 autocmd VimResized * wincmd =
-
-noremap :W :w
-noremap :Wq :wq
 
 let g:netrw_banner=0
 
@@ -93,8 +92,16 @@ set wildignore+=*/lib/*,*/build/*
 :compiler msvc
 set makeprg=./build.bat
 nnoremap <F5> :Make<cr> :copen<cr>:wincmd L<cr>
-nnoremap <leader>e :Ex<cr>
 
+nnoremap <leader>e :Ex<cr>
+noremap :W<cr> :w<cr>
+noremap :Wq :wq
 vnoremap < <gv
 vnoremap > >gv
-nnoremap <C--> o<CR>// -----------------------------------------------------------------------------<esc>
+" FZF Config
+nnoremap <C-p> :Files<cr>
+nnoremap <C-b> :Buffers<cr>
+nnoremap <C-g> :Rg<cr>
+
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
+let g:fzf_preview_window = ''
