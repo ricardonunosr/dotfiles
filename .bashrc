@@ -33,7 +33,9 @@ EDITOR=vim
 export PATH="~/bin:$PATH"
 export PATH="~/.local/bin:$PATH"
 
-# source bash aliases . ~/.bash_aliases
+if [ -f ~/aliases ]; then
+. ~/aliases
+fi
 
 # source computer-specific ~/.bash_profile
 if [ -f ~/.bash_profile ]; then
