@@ -37,3 +37,6 @@ alias dockimg='docker images'                                                   
 alias dockprune='docker system prune -a'                                        # prune everything
 alias dockceu='docker-compose run --rm -u $(id -u):$(id -g)'                    # run as the host user
 alias dockce='docker-compose run --rm'
+
+# C "auto-compile"
+alias auto-c="ls *.c | entr -s 'gcc main.c -o prog && ./prog'" 
