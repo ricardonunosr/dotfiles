@@ -4,6 +4,7 @@ ZSH_THEME="zshfish"
 HYPHEN_INSENSITIVE="true"
 
 plugins=(
+	fzf
 	git
 	zsh-autosuggestions
 )
@@ -19,3 +20,4 @@ else
 fi
 
 source ~/aliases
+. /usr/share/autojump/autojump.sh
