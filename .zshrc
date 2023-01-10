@@ -1,8 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="zshfish"
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
 HYPHEN_INSENSITIVE="true"
 
 plugins=(
@@ -13,15 +11,6 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-
-export LANG=en_US.UTF-8
-
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='vim'
-fi
-
 source ~/aliases
 . /usr/share/autojump/autojump.sh
 
@@ -49,3 +38,7 @@ ZSH_HIGHLIGHT_STYLES[single-hyphen-option]="${_argument_style}"
 ZSH_HIGHLIGHT_STYLES[single-quoted-argument-unclosed]="${_error_style}"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=238'
 
+# Environment
+export PATH="${HOME}/.local/bin:${PATH}"
+export EDITOR='vim'
+export LANG=en_US.UTF-8
