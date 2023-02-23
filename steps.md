@@ -14,3 +14,10 @@ Paste into `~/.config/gtk-3.0/settings.ini`
 [Settings]
 gtk-application-prefer-dark-theme=1
 ```
+
+```bash
+brew install --cask dropbox
+brew install --cask keepassxc
+brew install --cask rectangle
+brew install --cask spotify
+```
