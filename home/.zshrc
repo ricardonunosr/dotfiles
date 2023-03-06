@@ -11,7 +11,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-source ~/aliases
+source ~/.aliases
 . /usr/share/autojump/autojump.sh
 
 # Input Highlighting like fisk. Thanks @strager.
@@ -42,3 +42,6 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=238'
 export PATH="${HOME}/.local/bin:${PATH}"
 export EDITOR='vim'
 export LANG=en_US.UTF-8
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/opt/homebrew/opt/openjdk@17/bin:${PATH}"

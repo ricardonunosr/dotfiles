@@ -16,6 +16,7 @@ alias gt="git tag"
 alias gf='git fetch --all --prune --tags'
 alias gm='git merge'
 alias gap='git add -p'
+alias guncommit='git reset --soft HEAD~1'
 
 # ls/grep
 alias ls='ls --color=auto'
@@ -39,4 +40,4 @@ alias dockceu='docker-compose run --rm -u $(id -u):$(id -g)'                    
 alias dockce='docker-compose run --rm'
 
 # C "auto-compile"
-alias auto-c="ls *.c | entr -s 'gcc main.c -o prog && ./prog'" 
+alias auto-c="ls *.c | entr -s 'gcc main.c -o prog && ./prog'"
