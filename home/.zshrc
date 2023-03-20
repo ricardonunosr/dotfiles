@@ -12,7 +12,6 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 source ~/.aliases
-. /usr/share/autojump/autojump.sh
 
 # Input Highlighting like fisk. Thanks @strager.
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main)
