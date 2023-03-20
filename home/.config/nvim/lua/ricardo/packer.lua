@@ -41,7 +41,7 @@ packer.init {
 -- Install your plugins here
 return packer.startup(function(use)
 	-- Essential
-	use "wbthomason/packer.nvim" -- Have packer manage itself
+	use 'wbthomason/packer.nvim' -- Have packer manage itself
 
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.0',
@@ -71,11 +71,13 @@ return packer.startup(function(use)
 		}
 	}
 
-	-- Treesitter
-	use {
-		"nvim-treesitter/nvim-treesitter",
-		run = ":TSUpdate",
-	}
+    use({
+        'davidosomething/vim-colors-meh',
+        as = 'meh',
+        config = function()
+            vim.cmd('colorscheme meh')
+        end
+    })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

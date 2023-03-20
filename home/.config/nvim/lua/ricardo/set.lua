@@ -27,3 +27,14 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
+
+-- allow for cursor beyond last character
+vim.opt.virtualedit=onemore
+
+-- highlight search pattern as you type
+vim.opt.hlsearch = true
+vim.opt.incsearch = true
+
+-- use the OS clipboard for copying/pasting
+vim.opt.clipboard = 'unnamed'
+
