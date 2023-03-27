@@ -36,5 +36,7 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 -- use the OS clipboard for copying/pasting
-vim.opt.clipboard = 'unnamed'
+vim.opt.clipboard = 'unnamedplus'
+-- allow mouse
+vim.opt.mouse = 'a'
 

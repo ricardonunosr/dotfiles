@@ -30,14 +30,8 @@ keymap("n", "<esc>", ":nohlsearch<CR>", opts)
 keymap("n", "<C-a>", "ggVG$", opts)
 keymap("i", "<C-a>", "ggVG$", opts)
 
--- Format File
-keymap("n", "<leader>f", ":lua vim.lsp.buf.format()<CR>", opts)
-
 -- Comment Line
 keymap("n", "<leader>/", ":CommentToggle<CR>", opts)
-
--- Edit config
-keymap("n", "<leader>cfg", ":e $MYVIMRC<CR>", opts)
 
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
