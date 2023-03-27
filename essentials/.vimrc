@@ -37,7 +37,7 @@ set wildmenu
 " do NOT wrap text around if it is longer than screen width
 set nowrap
 " use the OS clipboard for copying/pasting
-set clipboard=unnamed
+set clipboard=unnamedplus
 " begin scrolling n charecters before right margin
 set sidescrolloff=5
 " turn off swap file generation
@@ -52,7 +52,6 @@ set expandtab tabstop=2 softtabstop=2 shiftwidth=2
 set linespace=0
 
 let mapleader = "\<space>"
-colorscheme thetheme
 
 " highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -72,36 +71,13 @@ if has ('gui_running')
   autocmd GUIEnter * simalt ~x
 endif
 
-call plug#begin('~/.vim/plugged')
-Plug 'tpope/vim-dispatch'
-Plug 'vim-airline/vim-airline'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'tek256/simple-dark'
-call plug#end()
-
 " auto resize splits
 autocmd VimResized * wincmd =
 
 let g:netrw_banner=0
-
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-set wildignore+=*\\tmp\\*,*.exe              " Windows
-set wildignore+=*/lib/*,*/build/*
-
-:compiler msvc
-set makeprg=./build.bat
-nnoremap <F5> :Make<cr> :copen<cr>:wincmd L<cr>
 
 nnoremap <leader>e :Ex<cr>
 noremap :W<cr> :w<cr>
 noremap :Wq :wq
 vnoremap < <gv
 vnoremap > >gv
-" FZF Config
-nnoremap <C-p> :Files<cr>
-nnoremap <C-b> :Buffers<cr>
-nnoremap <C-g> :Rg<cr>
-
-let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
-let g:fzf_preview_window = ''
