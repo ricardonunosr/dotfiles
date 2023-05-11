@@ -1,6 +1,3 @@
-"AUTHOR: Jan Hahlgan§
-"SCRIPT: https://github.com/roepel/naysayer88.vim
-
 set background=dark
 
 highlight clear
@@ -8,77 +5,108 @@ if exists("syntax_on")
 	syntax reset
 endif
 
-let g:colors_name="naysayer88"
+let s:black = "#000000"
+let s:gray = "#888888"
+let s:light_gray = "#878787"
 
-highlight! Default guifg=#d6b48b guibg=#042327 gui=NONE
-" link to normal does not work here for some reason...
-" highlight! Normal guifg=#edceab guibg=#042327 gui=NONE
-highlight! Normal guifg=#d6b48b guibg=#042327 gui=NONE
+let s:comment = "#31B72C"
+let s:text = "#d6b48b"
+let s:string = "#2ca198"
+let s:background = "#042327"
+let s:overlay = "#0a4e57"
+let s:ruler = "#053036"
+let s:some = "#875f5f"
+let s:some2 = "#dfaf87"
+let s:muted = "#6e6a86"
 
-highlight! Comment guifg=#31B72C guibg=NONE gui=NONE
+let g:colors_name="naysayer88_mine"
 
-highlight! link Constant Statement
-highlight! String guifg=#2ca198 guibg=NONE gui=NONE
+let g:naysayer_underline = get(g:, "naysayer_underline", 1)
+let s:underline = (g:naysayer_underline == 0) ? "NONE," : "underline,"
+
+function! s:hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
+  let cmd = ""
+  if a:guifg != ""
+    let cmd = cmd . " guifg=" . a:guifg
+  endif
+  if a:guibg != ""
+    let cmd = cmd . " guibg=" . a:guibg
+  endif
+  if a:ctermfg != ""
+    let cmd = cmd . " ctermfg=" . a:ctermfg
+  endif
+  if a:ctermbg != ""
+    let cmd = cmd . " ctermbg=" . a:ctermbg
+  endif
+  if a:attr != ""
+    let cmd = cmd . " gui=" . a:attr . " cterm=" . substitute(a:attr, "undercurl", s:underline, "")
+  endif
+  if a:guisp != ""
+    let cmd = cmd . " guisp=" . a:guisp
+  endif
+  if cmd != ""
+    exec "hi " . a:group . cmd
+  endif
+endfunction
+
+"+===============+
+"+ UI Components +
+"+===============+
+"+--- Attributes ---+
+call s:hi("Bold", "", "", "", "", "", "")
+call s:hi("italic", "", "", "", "", "", "")
+call s:hi("underline", "", "", "", "", "", "")
+
+"+--- Editor ---+
+call s:hi("ColorColumn", "", s:ruler, "NONE", "", "", "")
+call s:hi("Cursor", s:black, s:text, "", "NONE", "", "")
+"  call s:hi("CursorLine", "", s:black, "NONE", s:nord1_term, "NONE", "")
+"  call s:hi("Error", s:nord4_gui, s:nord11_gui, "", s:nord11_term, "", "")
+"  call s:hi("iCursor", s:nord0_gui, s:nord4_gui, "", "NONE", "", "")
+call s:hi("LineNr", s:overlay, "NONE", "", "NONE", "", "")
+"  call s:hi("MatchParen", s:nord8_gui, s:nord3_gui, s:nord8_term, s:nord3_term, "", "")
+"  call s:hi("NonText", s:nord2_gui, "", s:nord3_term, "", "", "")
+"  call s:hi("Normal", s:nord4_gui, s:nord0_gui, "NONE", "NONE", "", "")
+call s:hi("Pmenu", s:text, s:background, "NONE", "NONE", "NONE", "")
+call s:hi("PmenuSbar", s:some, s:some2, "NONE", "", "", "")
+call s:hi("PmenuSel", s:some2, s:some, "", "", "", "")
+call s:hi("PmenuThumb", s:text, s:gray, "NONE", "", "", "")
+"  call s:hi("SpecialKey", s:nord3_gui, "", s:nord3_term, "", "", "")
+"  call s:hi("SpellBad", s:nord11_gui, s:nord0_gui, s:nord11_term, "NONE", "undercurl", s:nord11_gui)
+"  call s:hi("SpellCap", s:nord13_gui, s:nord0_gui, s:nord13_term, "NONE", "undercurl", s:nord13_gui)
+"  call s:hi("SpellLocal", s:nord5_gui, s:nord0_gui, s:nord5_term, "NONE", "undercurl", s:nord5_gui)
+"  call s:hi("SpellRare", s:nord6_gui, s:nord0_gui, s:nord6_term, "NONE", "undercurl", s:nord6_gui)
+call s:hi("Visual", "", s:text, "", "", "", "")
+"  call s:hi("VisualNOS", "", s:nord2_gui, "", s:nord1_term, "", "")
+
+if has('nvim')
+	"+--- Gutter ---+
+	call s:hi("CursorColumn", "", s:background, "NONE", "", "", "")
+	call s:hi("CursorLineNr", s:background, s:background, "NONE","", "NONE", "")
+	call s:hi("Folded", s:background, s:background, "", "", "", "")
+	call s:hi("FoldColumn", s:background, s:some, "", "NONE", "", "")
+	call s:hi("SignColumn", s:background, s:background, "", "NONE", "", "")
+endif
+
+call s:hi("Default", s:text, s:background, "NONE", "", "", "")
+call s:hi("Normal", s:text, s:background, "NONE", "", "", "")
+call s:hi("Comment", s:comment, "", "", "", "", "")
+call s:hi("Statement", "#ffffff", "", "", "", "", "")
+call s:hi("Comment", s:comment, "", "", "", "", "")
+call s:hi("String", s:string, "", "", "", "", "")
+call s:hi("Number", "#70c5bf", "", "", "", "", "")
+call s:hi("PreProc", "#9DE3C0", "", "", "", "", "")
+call s:hi("SpecialComment", "#87875f", "", "", "", "", "")
+call s:hi("Underlined", "#af5f5f", "", "", "", "", "")
+
 highlight! link Character Number
-highlight! Number guifg=#70c5bf guibg=NONE gui=NONE
 highlight! link Boolean Number
 highlight! link Float Number
-
 highlight! link Identifier Default
-"highlight! link Function Default
-
-highlight! Statement guifg=#ffffff guibg=NONE gui=NONE
-"highlight! link Conditional Statement
-"highlight! link Repeat Statement
-"highlight! link Label Statement
 highlight! link Operator Default
-"highlight! link Keyword Statement
-"highlight! link Exception Statement
-
-highlight! PreProc guifg=#9DE3C0 guibg=NONE gui=NONE
-"highlight link Include PreProc
-"highlight link Define PreProc
-"highlight link Macro PreProc
-"highlight link PreCondit PreProc
-
-highlight! link Type PreProc
-"highlight! link StorageClass Type
-"highlight! link Structure Type
-"highlight! link Typedef Type
-
 highlight! link Special Default
+highlight! link Title Default
+highlight! link Constant Statement
+highlight! link Type PreProc
 highlight! link SpecialChar String
-"highlight! link Tag Special
-"highlight! link Delimiter Special
-highlight SpecialComment guifg=#87875f guibg=NONE gui=reverse
-"highlight! link Debug Special
-
-highlight Underlined guifg=#af5f5f guibg=NONE gui=NONE
-
-"highlight Ignore guifg=#af5f5f guibg=NONE gui=NONE
-
-"highlight Error guifg=#af5f5f guibg=NONE gui=NONE
-
 highlight! link Todo Comment
-
-highlight link Title Default
-"highlight htmlStatement guifg=#878787 guibg=NONE gui=NONE
-"highlight htmlItalic guifg=#dfaf87 guibg=NONE gui=NONE
-"highlight htmlArg guifg=#875f5f guibg=NONE gui=NONE
-"highlight cssIdentifier guifg=#dfaf87 guibg=NONE gui=NONE
-"highlight cssClassName guifg=#dfaf87 guibg=NONE gui=NONE
-
-" C#
-highlight! link csEndColon Default
-highlight! link csLogicSymbols Default
-
-" Window UI
-highlight Cursor                     guifg=#000000       guibg=#dfdfaf      gui=NONE
-highlight MoreMsg                    guifg=#dfaf87       guibg=NONE         gui=NONE
-highlight Visual                     guifg=#dfdfaf       guibg=#888888      gui=NONE
-highlight Question                   guifg=#875f5f       guibg=NONE         gui=NONE
-highlight Search                     guifg=#dfdfaf       guibg=#878787      gui=NONE
-highlight PmenuSel                   guifg=#dfdfaf       guibg=#875f5f      gui=NONE
-highlight MatchParen                 guifg=#dfdfaf       guibg=#875f5f      gui=NONE
-highlight VertSplit                  guifg=#000000       guibg=NONE         gui=NONE
-highlight! EndOfBuffer               guifg=#042327       guibg=#042327      gui=NONE

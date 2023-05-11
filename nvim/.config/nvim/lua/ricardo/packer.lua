@@ -71,13 +71,8 @@ return packer.startup(function(use)
 		}
 	}
 
-    use({
-        'davidosomething/vim-colors-meh',
-        as = 'meh',
-        config = function()
-            vim.cmd('colorscheme meh')
-        end
-    })
+	use({ 'rose-pine/neovim', as = 'rose-pine' })
+    use { "ellisonleao/gruvbox.nvim" }
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

@@ -48,3 +48,5 @@ keymap("x", "K", ":m '<-2<CR>gv=gv", opts)
 
 keymap('n', '<leader>o', '<CMD>lua require("telescope.builtin").find_files{ hidden = true }<CR>', opts)
 keymap('n', '<leader>ol', '<CMD>lua require("telescope.builtin").live_grep()<CR>', opts)
+
+keymap("n", '<leader>b', '<CMD>make<CR>', opts)

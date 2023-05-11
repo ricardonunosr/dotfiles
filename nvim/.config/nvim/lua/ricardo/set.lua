@@ -40,3 +40,4 @@ vim.opt.clipboard = 'unnamedplus'
 -- allow mouse
 vim.opt.mouse = 'a'
 
+vim.cmd [[colorscheme rose-pine]]
