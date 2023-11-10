@@ -39,6 +39,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=238'
 
 # Environment
 export PATH="${HOME}/.local/bin:${PATH}"
+export PATH="${HOME}/go/bin:${PATH}"
 export EDITOR='vim'
 export LANG=en_US.UTF-8
 
