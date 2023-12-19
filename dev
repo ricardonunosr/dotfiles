@@ -2,3 +2,13 @@
 
 rm -rf ~/.tmux.conf
 ln -s $(pwd)/essentials/.tmux.conf ~/.tmux.conf
+rm -rf ~/.aliases
+ln -s $(pwd)/essentials/.aliases ~/.aliases
+rm -rf ~/.vimrc
+ln -s $(pwd)/essentials/.vimrc ~/.vimrc
+rm -rf ~/.zshrc
+ln -s $(pwd)/essentials/.zshrc ~/.zshrc
+rm -rf ~/.config/i3/config
+ln -s $(pwd)/essentials/.config/i3/config ~/.config/i3/config
+rm -rf ~/.local/bin/tmux-sessionizer
+ln -s $(pwd)/essentials/.local/bin/tmux-sessionizer ~/.local/bin/tmux-sessionizer

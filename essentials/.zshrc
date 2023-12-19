@@ -1,13 +1,13 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="zshfish"
+ZSH_THEME="fishy"
 HYPHEN_INSENSITIVE="true"
 
 plugins=(
 	fzf
 	git
-	zsh-autosuggestions
-	zsh-syntax-highlighting
+	#zsh-autosuggestions
+	#zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -39,20 +39,11 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=238'
 
 # Environment
 export PATH="${HOME}/.local/bin:${PATH}"
-export PATH="${HOME}/go/bin:${PATH}"
 export EDITOR='vim'
 export LANG=en_US.UTF-8
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH="/opt/homebrew/opt/openjdk@17/bin:${PATH}"
-export PATH="/Users/ricardo/Library/Python/3.11/bin:${PATH}"
+bindkey -s ^f "tmux-sessionizer\n"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-bindkey -s ^f "tmux-sessionizer\n"
-export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
-# >>> xmake >>>
-test -f "/Users/ricardo/.xmake/profile" && source "/Users/ricardo/.xmake/profile"
-# <<< xmake <<<
