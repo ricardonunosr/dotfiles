@@ -2,6 +2,11 @@
 
 export PROMPT='%F{green}%m:%F{blue}%~ %F{white}$%f '
 
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=1000
+setopt SHARE_HISTORY
+
 source ~/.aliases
 [ -f ~/.workzshrc ] && source ~/.workzshrc
 
@@ -19,6 +24,5 @@ else # Linux
 fi
 
 bindkey -s ^f "tmux-sessionizer\n"
-source /opt/ros/noetic/setup.zsh
 
 # zprof
