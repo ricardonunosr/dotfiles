@@ -8,6 +8,8 @@ rm -rf ~/.vimrc
 ln -s $(pwd)/essentials/.vimrc ~/.vimrc
 rm -rf ~/.zshrc
 ln -s $(pwd)/essentials/.zshrc ~/.zshrc
+rm -rf ~/.config/awesome/rc.lua
+ln -s $(pwd)/essentials/.config/awesome/rc.lua ~/.config/awesome/rc.lua
 rm -rf ~/.config/i3/config
 ln -s $(pwd)/essentials/.config/i3/config ~/.config/i3/config
 rm -rf ~/.local/bin/tmux-sessionizer
