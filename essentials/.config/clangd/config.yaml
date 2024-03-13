@@ -1,0 +1,41 @@
+CompileFlags:
+  Add: [-Wunused-variable]
+
+Diagnostics:
+  ClangTidy:
+    FastCheckFilter: Loose
+    Add:
+      [
+        misc-unused-parameters,
+        readability*,
+        bugprone*,
+        cppcoreguidelines*,
+        performance*,
+      ]
+    Remove:
+      [
+        readability-identifier-length,
+        readability-avoid-const-params-in-decls,
+        cppcoreguidelines-avoid-const-or-ref-data-members,
+        cppcoreguidelines-macro-usage,
+        cppcoreguidelines-avoid-do-while,
+        bugprone-easily-swappable-parameters,
+        bugprone-macro-parentheses,
+        performance-avoid-endl
+      ]
+    CheckOptions:
+      readability-identifier-naming.ParameterCase: lower_case
+      readability-identifier-naming.MemberCase: lower_case
+      readability-identifier-naming.PrivateMemberCase: lower_case
+      readability-identifier-naming.PrivateMemberSuffix: _
+      readability-identifier-naming.ClassCase: CamelCase
+      readability-identifier-naming.MethodCase: CamelCase
+      readability-identifier-naming.EnumConstantCase: CamelCase
+      readability-identifier-naming.EnumConstantPrefix: k
+      readability-identifier-naming.GlobalConstantCase: CamelCase
+      readability-identifier-naming.GlobalConstantPrefix: k
+      readability-identifier-naming.StaticConstantCase: CamelCase
+      readability-identifier-naming.StaticConstantPrefix: k
+      cppcoreguidelines-special-member-functions.AllowSoleDefaultDtor: True
+      cppcoreguidelines-special-member-functions.AllowMissingMoveFunctionsWhenCopyIsDeleted: True
+
