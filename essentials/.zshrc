@@ -1,6 +1,7 @@
 # zmodload zsh/zprof
 
-export PROMPT='%F{green}%m:%F{blue}%~ %F{white}$%f '
+export PROMPT='%F{green}%n@%m:%F{blue}%~%F{white}$%f '
+
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000

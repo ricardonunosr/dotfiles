@@ -15,6 +15,7 @@ alias gs="git status"
 alias gt="git tag"
 alias gf='git fetch --all --prune --tags'
 alias gm='git merge'
+alias gus='git restore --staged .'
 alias gap='git add -p'
 alias guncommit='git reset --soft HEAD~1'
 
