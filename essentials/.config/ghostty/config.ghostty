@@ -1,0 +1,5 @@
+# Copy selected text with Ctrl+C (only if text is selected)
+keybind = performable:ctrl+c=copy_to_clipboard
+
+# Paste with Ctrl+V
+keybind = ctrl+v=paste_from_clipboard

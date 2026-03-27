@@ -2,6 +2,7 @@
     "workbench.startupEditor": "none",
     "editor.minimap.enabled": false,
     // Vim
+    "keyboard.dispatch": "keyCode",
     "vim.useSystemClipboard": true,
     "vim.leader": "<Space>",
     "vim.hlsearch": true,
@@ -239,15 +240,10 @@
         "editor.formatOnType": true
     },
     "[cpp]": {
-        "editor.defaultFormatter": "ms-vscode.cpptools"
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
     },
     "C_Cpp.autocomplete": "default",
     "C_Cpp.intelliSenseEngine": "default",
-    "cSpell.userWords": [
-        "anki",
-        "supa",
-        "supabase"
-    ],
     "workbench.activityBar.location": "top",
     "extensions.ignoreRecommendations": true,
     "breadcrumbs.enabled": false,
@@ -255,7 +251,12 @@
         "--compile-commands-dir={workspaceFolder}/build"
     ],
     "editor.stickyScroll.enabled": false,
-    "workbench.colorTheme": "Gruvbox Dark (Hard)",
     "workbench.secondarySideBar.defaultVisibility": "hidden",
-    "workbench.editor.pinnedTabsOnSeparateRow": true
+    "workbench.editor.pinnedTabsOnSeparateRow": true,
+    "workbench.preferredLightColorTheme": "Dark Modern",
+    "github-enterprise.uri": "https://bmw.ghe.com/",
+    "github.copilot.advanced": {
+        "authProvider": "github-enterprise"
+    },
+    "workbench.colorTheme": "Dark Modern"
 }

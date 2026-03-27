@@ -1,16 +1,35 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
-rm -rf ~/.tmux.conf
-ln -s $(pwd)/essentials/.tmux.conf ~/.tmux.conf
-rm -rf ~/.aliases
-ln -s $(pwd)/essentials/.aliases ~/.aliases
-rm -rf ~/.vimrc
-ln -s $(pwd)/essentials/.vimrc ~/.vimrc
-rm -rf ~/.zshrc
-ln -s $(pwd)/essentials/.zshrc ~/.zshrc
-rm -rf ~/.config/awesome/rc.lua
-ln -s $(pwd)/essentials/.config/awesome/rc.lua ~/.config/awesome/rc.lua
-rm -rf ~/.config/i3/config
-ln -s $(pwd)/essentials/.config/i3/config ~/.config/i3/config
-rm -rf ~/.local/bin/tmux-sessionizer
-ln -s $(pwd)/essentials/.local/bin/tmux-sessionizer ~/.local/bin/tmux-sessionizer
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/essentials"
+BACKUP_DIR="$HOME/.dotfiles-backup/$(date +%Y%m%d-%H%M%S)"
+
+link_file(){
+  local src="$1"
+  local dest="$2"
+
+  mkdir -p "$(dirname "$dest")"
+
+  if [ -e "$dest" ] || [ -L "$dest" ]; then
+    mkdir -p "$BACKUP_DIR/$(dirname "${dest#HOME/}")"
+    mv "$dest" "$BACKUP_DIR/${dest#HOME/}"
+    echo "Backed up $dest -> $BACKUP_DIR/${dest#HOME/}"
+  fi
+
+  ln -s "$src" "$dest"
+  echo "Linked $dest -> $src"
+}
+
+# link_file "$DOTFILES_DIR/.tmux.conf" "$HOME/.tmux.conf"
+# link_file "$DOTFILES_DIR/.aliases" "$HOME/.aliases"
+# link_file "$DOTFILES_DIR/.vimrc" "$HOME/.vimrc"
+# link_file "$DOTFILES_DIR/.zshrc" "$HOME/.zshrc"
+# link_file "$DOTFILES_DIR/.config/i3/config" "$HOME/.config/i3/config"
+# link_file "$DOTFILES_DIR/.local/bin/tmux-sessionizer" "$HOME/.local/bin/tmux-sessionizer"
+# link_file "$DOTFILES_DIR/.config/Code/User/keybindings.json" "$HOME/.config/Code/User/keybindings.json"
+# link_file "$DOTFILES_DIR/.config/Code/User/settings.json" "$HOME/.config/Code/User/settings.json"
+# link_file "$DOTFILES_DIR/.config/clangd/config.yaml" "$HOME/.config/Code/User/settings.json"
+# link_file "$DOTFILES_DIR/.config/gtk-3.0/settings.ini" "$HOME/.config/gtk-3.0/settings.ini"
+# link_file "$DOTFILES_DIR/.config/ghostty/config.ghostty" "$HOME/.config/ghostty/config.ghostty"
+link_file "$DOTFILES_DIR/.config/greenclip.toml" "$HOME/.config/greenclip.toml"
+
