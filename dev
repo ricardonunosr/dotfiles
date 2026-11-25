@@ -32,4 +32,5 @@ link_file(){
 # link_file "$DOTFILES_DIR/.config/gtk-3.0/settings.ini" "$HOME/.config/gtk-3.0/settings.ini"
 # link_file "$DOTFILES_DIR/.config/ghostty/config.ghostty" "$HOME/.config/ghostty/config.ghostty"
 link_file "$DOTFILES_DIR/.config/greenclip.toml" "$HOME/.config/greenclip.toml"
+link_file "$DOTFILES_DIR/.config/opencode/skills" "$HOME/.config/opencode/skills"
 
